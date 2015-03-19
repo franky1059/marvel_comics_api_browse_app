@@ -1,0 +1,16 @@
+<?php
+
+$title = 'Marvel Characters Index';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<h2>Characters by First Letter</h2>
+
+    <?php 
+        $this->character_alpha_menu();
+    ?>
+    <br/>
+        
+<div id="results_area" >
+</div>

@@ -1,0 +1,26 @@
+
+<?php if (count($this->paginator)): ?>
+<ul>
+<?php foreach ($this->paginator as $comic_item): ?>
+  <li>
+  <?php 
+        echo "title: ".$comic_item->title;
+        echo "<br />";
+        echo "id: ".$comic_item->id;
+        echo "<br />";       
+        echo "release date: ".$comic_item->release_date;
+        echo "<br />"; 
+        if($comic_item->issue_number > 0) {
+        echo "issuer number: ".$comic_item->issue_number;
+        }
+        echo "<br />";
+        echo "<br />";   
+  ?></li>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
+<?php 
+echo $this->paginationControl($this->paginator,
+                                    'Sliding', 'marvel/marvel/my_paginatation_control_ajax_1', array('character_id' => $this->character_id)); 
+?>

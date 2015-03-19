@@ -1,0 +1,27 @@
+<h2>Digital Comics by Character</h2>
+
+<?php
+
+
+    if ($this->entries_exist) {
+        foreach($this->character_info_results as $comic_item){
+            echo "title: ".$comic_item->title;
+            echo "<br />";
+            echo "id: ".$comic_item->id;
+            echo "<br />";       
+            echo "release date: ".$comic_item->release_date;
+            echo "<br />"; 
+            if($comic_item->issue_number > 0) {
+            echo "issuer number: ".$comic_item->issue_number;
+            }
+            echo "<br />";
+            echo "<br />"; 
+        }
+    } else {
+        echo "Sorry, not entries exist for this character...";    
+    }
+
+
+
+
+?>
